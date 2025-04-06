@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html> 
+  
+    <head>
+      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Link do Font Awesome para os icones / Link to Font Awesome for icons -->
+      <meta charset="UTF-8"> <!-- Define o conjunto de caracteres como UTF-8 / Set the character set to UTF-8 -->
+    <style>
+      div{
+        border: solid 8px;
+        border-radius: 20px;
+        width: 400px;       
+        height: 300px;  
+        background-color: white;
+      }    
+      body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+        height: 100vh;
+        margin: 0;
+        background-image: linear-gradient(to bottom right, blue, pink, purple);
+      }
+      button{
+        border: solid 5px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      footer {
+      position: fixed;
+      bottom: 10px;
+      text-align: center;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer i {
+      margin-right: 5px;
+    }
+
+    
+    </style>
+    </head>
+    <body>
+      <div class = "container">
+     <h1> PEDRA, PAPEL E TESOURA </h1>
+      <p>Escolha uma das opcoes abaixo:</p>
+      <button title="Escolher pedra" onClick="jogar('pedra🪨')">Pedra🪨</button> <!--Buttons com function "jogar" / Buttons with "jogar(play)" function-->
+      <button title="Escolher papel"onClick="jogar('papel🧻')">Papel🧻</button>
+      <button title="Escolher tesoura" onClick="jogar('tesoura✂️')">Tesoura✂️</button>
+        
+        <h2 id="resultado"></h2> <!-- Resultado do jogo / Game result -->
+        </div>
+        <footer>
+          <p>Feito por 
+            <a href="https://github.com/LuizFernando1206" target="_blank">
+              <i class="fab fa-github"></i> GitHub <!-- Link do GitHub / Github link -->
+            </a> | 
+            <a href="https://www.instagram.com/luiz_fscs" target="_blank">
+              <i class="fab fa-instagram"></i> Instagram <!-- Link do Instagram / Instagram link -->
+            </a>
+          </p>
+        </footer>
+      <script>
+        function jogar(escolhaUsuario){
+          
+        
+        let opcoes = ["pedra🪨", "papel🧻", "tesoura✂️"]; // Da as opções disponiveis / Give the available options
+        
+        let escolhaPc = opcoes[Math.floor(Math.random() * opcoes.length)];// Computador escolhe aleatoriamente entre as opções / computer randomly chooses between the options
+        
+        let resultado = ""; // Variavel para armazenar o resultado / Variable to store the result
+        
+        if(escolhaUsuario == escolhaPc){ // Se o usuario e o computador escolherem a mesma opção, é empate / If the user and the computer choose the same option, it's a tie
+          resultado = "Empate técnico";
+        } else if (
+          (escolhaUsuario == "pedra🪨" && escolhaPc == "tesoura✂️")|| // Possibilidades de vitoria do usuario / User winning possibilities
+          (escolhaUsuario == "papel🧻" && escolhaPc == "pedra🪨")||
+          (escolhaUsuario == "tesoura✂️" && escolhaPc == "papel🧻")
+        ){
+           resultado = "Voce venceu🎉"; // Exibe o resultado / Show the result
+        } else {
+           resultado = "Computador ganhou😿";
+        }
+        document.getElementById("resultado").innerHTML = 
+  `Sua escolha: ${escolhaUsuario} <br> Computador escolheu: ${escolhaPc} <br><strong>${resultado}</strong>`;
+        // Exibe a escolha do usuario e do computador / Show the user's and computer's choice
+      }
+      </script>
+    </body>
+    </html>
+  
