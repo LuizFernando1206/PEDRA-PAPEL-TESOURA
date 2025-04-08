@@ -17,8 +17,8 @@ Mostra o resultado na tela com uma mensagem divertida!
 ---
 
 Feito por [@LuizFernando1206](https://github.com/LuizFernando1206)
- 
-/
+
+---
 
 # Rock, Paper, Scissors 🎮
 
@@ -34,7 +34,7 @@ The result is displayed on the screen with a fun message!
 ## How to Play
 1. Open the `index.html` file in your browser.
 2. Choose one of the options: Rock 🪨, Paper 🧻, or Scissors ✂️.
-3. See the result on the screen.
+3. See the result on the screen!
 
 ---
 
